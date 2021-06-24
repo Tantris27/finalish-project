@@ -1,6 +1,7 @@
 import { MikroORM } from '@mikro-orm/core';
+// eslint-disable-next-line unicorn/prefer-node-protocol
 import path from 'path';
-import { __prod__ } from './constants';
+import { _prod_ } from './constants';
 import { Post } from './entities/Post';
 import { User } from './entities/User';
 
@@ -9,7 +10,7 @@ export default {
   dbName: 'lireddit',
   user: 'postgres',
   password: 'N1etzschesAffe27',
-  debug: !__prod__,
+  debug: !_prod_,
   type: 'postgresql',
   entities: [Post, User],
   migrations: {
