@@ -63,5 +63,12 @@
   "resolutions": {
     "eslint-plugin-react": "7.24.0",
     "eslint-plugin-testing-library": "4.6.0"
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./src/mikro-orm.config.ts",
+      "./dist/mikro-orm.config.js"
+    ]
   }
 }
