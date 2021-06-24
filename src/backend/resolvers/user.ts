@@ -15,16 +15,16 @@ import { MyContext } from '../types';
 @InputType()
 class UsernamePasswordInput {
   @Field()
-  username: string;
+  username!: string;
   @Field()
-  password: string;
+  password!: string;
 }
 @ObjectType()
 class FieldError {
   @Field()
-  field: string;
+  field!: string;
   @Field()
-  message: string;
+  message!: string;
 }
 
 @ObjectType()
@@ -90,7 +90,7 @@ export class UserResolver {
           ],
         };
       }
-      //Will login after registration by setting a cookie
+      // Will login after registration by setting a cookie
       req.session.userId = user.id;
       return { user };
     }
