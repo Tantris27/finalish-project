@@ -2,37 +2,38 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "UpLeveled Node + React TSConfig",
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "target": "es2015",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "isolatedModules": true,
-    "outDir": "src/dist",
+    "outDir": "dist",
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "downlevelIteration": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "preserve",
-    "noEmit": true,
+    "noEmit": false,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
-    "strict": true
+    "strict": true,
+    "experimentalDecorators": true
   },
   "include": [
-    ".eslintrc.js",
+    // ".eslintrc.js",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.js"
   ],
-  "exclude": [
-    "node_modules",
-    "build"
-  ]
+  "exclude": ["node_modules", "build"],
+  "ts-node": {
+    // these options are overrides used only by ts-node
+    // same as our --compilerOptions flag and our TS_NODE_COMPILER_OPTIONS environment variable
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  }
 }

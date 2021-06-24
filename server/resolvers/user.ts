@@ -14,16 +14,16 @@ import { MyContext } from '../types';
 
 @InputType()
 class UsernamePasswordInput {
-  @Field()
+  @Field(() => String)
   username!: string;
-  @Field()
+  @Field(() => String)
   password!: string;
 }
 @ObjectType()
 class FieldError {
-  @Field()
+  @Field(() => String)
   field!: string;
-  @Field()
+  @Field(() => String)
   message!: string;
 }
 
@@ -90,7 +90,7 @@ export class UserResolver {
           ],
         };
       }
-      //Will login after registration by setting a cookie
+      // Will login after registration by setting a cookie
       req.session.userId = user.id;
       return { user };
     }
