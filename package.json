@@ -83,10 +83,6 @@
     "eslint-plugin-testing-library": "4.6.0"
   },
   "mikro-orm": {
-    "useTsNode": true,
-    "configPaths": [
-      "./server/mikro-orm.config.ts",
-      ".server/dist/mikro-orm.config.js"
-    ]
+    "useTsNode": true
   }
 }
