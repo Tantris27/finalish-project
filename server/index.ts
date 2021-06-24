@@ -65,7 +65,7 @@ const main = async () => {
     // await orm.em.persistAndFlush(post);
 
     app.listen(4000, () => {
-      console.log('App started on Localhost:4000');
+      console.log('App started on http://Localhost:4000');
     });
   });
 };

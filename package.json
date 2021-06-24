@@ -6,9 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "dev2": "nodemon ",
-    "dev3": "ts-node-dev server/index.ts",
-    "watch": "tsc -w"
+    "dev-server": "ts-node-dev server/index.ts"
   },
   "dependencies": {
     "-": "^0.0.1",
