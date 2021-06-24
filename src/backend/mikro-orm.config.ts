@@ -1,4 +1,5 @@
 import { MikroORM } from '@mikro-orm/core';
+// eslint-disable-next-line unicorn/prefer-node-protocol
 import path from 'path';
 import { __prod__ } from './constants';
 import { Post } from './entities/Post';

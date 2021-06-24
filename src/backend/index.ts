@@ -24,20 +24,20 @@ const main = async () => {
 
   const app = express();
 
-  const RedisStore = connectRedis(session);
+  const redisStore = connectRedis(session);
   const redisClient = redis.createClient();
 
   app.use(
     session({
       name: 'sid',
-      store: new RedisStore({
+      store: new redisStore({
         client: redisClient,
         // disables TimeToLast so the session stays alive forever !!!Change Later!!!
         // disableTTL: true,
         disableTouch: true,
       }),
       cookie: {
-        maxAge: 1000 * 60 * 60 * 24 * 365 * 10, //10 Years,
+        maxAge: 1000 * 60 * 60 * 24 * 365 * 10, // 10 Years,
         httpOnly: true,
         sameSite: 'strict', // protection against Cross Site Scripting
         secure: __prod__,

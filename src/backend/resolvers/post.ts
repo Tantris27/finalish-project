@@ -31,10 +31,11 @@ export class PostResolver {
     @Ctx() { em }: MyContext,
   ): Promise<Post | null> {
     const post = await em.findOne(Post, { id });
-    await console.log(post);
+    // await console.log(post);
     if (!post) {
       return null;
     }
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (typeof title !== undefined) {
       post.title = title;
       await em.persistAndFlush(post);
